@@ -9,5 +9,9 @@ class ActiveSupport::TestCase
   # application_helper.rb に定義されている full_title メソッドを test 環境でも使えるように include する
   include ApplicationHelper
 
+  # テストユーザーがログイン中の場合に true を返す
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
   # Add more helper methods to be used by all tests here...
 end
